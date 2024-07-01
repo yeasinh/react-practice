@@ -1,0 +1,60 @@
+.app {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f0f0f0;
+}
+
+.form {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 300px;
+}
+
+.form h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.form form {
+  display: flex;
+  flex-direction: column;
+}
+
+.email,
+.password {
+  text-align: left;
+}
+
+.form form label {
+  margin-bottom: 8px;
+}
+
+.form form input {
+  padding: 8px;
+  margin-bottom: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.form form button {
+  padding: 10px;
+  background-color: #007bff;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.form form button:hover {
+  background-color: #0056b3;
+}
+
+.form p {
+  color: red;
+  margin-top: 5px;
+  font-size: 14px;
+}
