@@ -1,8 +1,8 @@
 import { createBrowserRouter } from "react-router-dom";
 import App from "../App";
-import Calculator from "../screens/calculator/Calculator";
-import MyForm from "../screens/form/MyForm";
-import MyPosts from "../screens/posts/MyPosts";
+import Calculator from "../screens/Calculator";
+import MyForm from "../screens/MyForm";
+import MyPosts from "../screens/MyPosts";
 
 const router = createBrowserRouter([
   {
