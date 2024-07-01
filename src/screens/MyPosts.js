@@ -37,7 +37,7 @@ const MyPosts = () => {
   }
 
   return (
-    <div className="app">
+    <div className="myposts-app">
       <h1>My Posts</h1>
       <div className="cards-container">
         {data.map((post) => (
