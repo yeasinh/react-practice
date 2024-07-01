@@ -1,4 +1,4 @@
-.app {
+.myform-app {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -24,6 +24,7 @@
   flex-direction: column;
 }
 
+.username,
 .email,
 .password {
   text-align: left;
