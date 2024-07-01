@@ -76,7 +76,7 @@ const MyForm = () => {
       <div className="form">
         <h1>My Form</h1>
         <form onSubmit={handleSubmit}>
-          <div className="username">
+          <div className="field" id="username">
             <label htmlFor="username">Username: </label>
             <input
               type="username"
@@ -86,7 +86,7 @@ const MyForm = () => {
             />
             {errors.username && <p>{errors.username}</p>}
           </div>
-          <div className="email">
+          <div className="field" id="email">
             <label htmlFor="email">Email: </label>
             <input
               type="email"
@@ -96,7 +96,7 @@ const MyForm = () => {
             />
             {errors.email && <p>{errors.email}</p>}
           </div>
-          <div className="password">
+          <div className="field" id="password">
             <label htmlFor="password">Password: </label>
             <input
               type="password"
@@ -106,7 +106,7 @@ const MyForm = () => {
             />
             {errors.password && <p>{errors.password}</p>}
           </div>
-          <div className="password">
+          <div className="field" id="cpassword">
             <label htmlFor="cpassword">Confirm Password: </label>
             <input
               type="password"

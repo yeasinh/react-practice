@@ -1,4 +1,5 @@
-.myform-app {
+.myform-app,
+.myformik-app {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -24,9 +25,7 @@
   flex-direction: column;
 }
 
-.username,
-.email,
-.password {
+.field {
   text-align: left;
 }
 
