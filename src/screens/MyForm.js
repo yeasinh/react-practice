@@ -4,8 +4,10 @@ import "./MyForm.css";
 
 const MyForm = () => {
   const [formData, setFormData] = useState({
+    username: "",
     email: "",
     password: "",
+    cpassword: "",
   });
 
   const [errors, setErrors] = useState({});
@@ -14,6 +16,12 @@ const MyForm = () => {
     console.log("Performing validation...");
     const myErrors = {};
     const emailRegex = /\S+@\S+\.\S+/; // Regular expression for something@domain.ext
+
+    if (!formData.username) {
+      myErrors.username = "Username is required.";
+    } else if (["admin", "god"].includes(formData.username)) {
+      myErrors.username = "Username is invalid";
+    }
 
     if (!formData.email) {
       myErrors.email = "Email is required.";
@@ -25,6 +33,12 @@ const MyForm = () => {
       myErrors.password = "Password is required.";
     } else if (formData.password.length < 6) {
       myErrors.password = "Password must be at least 6 characters.";
+    }
+
+    if (!formData.cpassword) {
+      myErrors.cpassword = "Confirmation is required.";
+    } else if (formData.cpassword === formData.password) {
+      myErrors.cpassword = "Password must match.";
     }
 
     return myErrors;
@@ -58,12 +72,22 @@ const MyForm = () => {
   };
 
   return (
-    <div className="app">
+    <div className="myform-app">
       <div className="form">
         <h1>My Form</h1>
         <form onSubmit={handleSubmit}>
-          <div className="email">
-            <label>Email: </label>
+          <div className="field" id="username">
+            <label htmlFor="username">Username: </label>
+            <input
+              type="username"
+              name="username"
+              value={formData.username}
+              onChange={handleChange}
+            />
+            {errors.username && <p>{errors.username}</p>}
+          </div>
+          <div className="field" id="email">
+            <label htmlFor="email">Email: </label>
             <input
               type="email"
               name="email"
@@ -72,12 +96,22 @@ const MyForm = () => {
             />
             {errors.email && <p>{errors.email}</p>}
           </div>
-          <div className="password">
-            <label>Password: </label>
+          <div className="field" id="password">
+            <label htmlFor="password">Password: </label>
             <input
               type="password"
               name="password"
               value={formData.password}
+              onChange={handleChange}
+            />
+            {errors.password && <p>{errors.password}</p>}
+          </div>
+          <div className="field" id="cpassword">
+            <label htmlFor="cpassword">Confirm Password: </label>
+            <input
+              type="password"
+              name="cpassword"
+              value={formData.cpassword}
               onChange={handleChange}
             />
             {errors.password && <p>{errors.password}</p>}
