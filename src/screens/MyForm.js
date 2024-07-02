@@ -79,7 +79,7 @@ const MyForm = () => {
           <div className="field" id="username">
             <label htmlFor="username">Username: </label>
             <input
-              type="username"
+              type="text"
               name="username"
               value={formData.username}
               onChange={handleChange}
